@@ -4,7 +4,8 @@ def show_menu():
     print("Select an option:")
     print("1. Set DNS")
     print("2. Remove DNS")
-    print("3. Exit")
+    print("3. Display Dns")
+    print("4. Exit")
 
 
 
@@ -18,6 +19,9 @@ def main():
         elif choice =="2":
             os.system('python DeactiveShecan.py')
         elif choice == "3":
+            os.system('python display_dns.py')
+            break
+        elif choice == "4":
             print('Exiting ...')
             break
         else:
