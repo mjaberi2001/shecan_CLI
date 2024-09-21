@@ -1,4 +1,7 @@
 import os
+RED = "\033[31m"
+GREEN = "\033[32m"
+RESET = "\033[0m"
 
 def get_connected_interfaces():
     output = os.popen('ipconfig').readlines()
@@ -21,9 +24,9 @@ def get_connected_interfaces():
 def remove_dns(interface):
     try:
         os.system(f'netsh interface ip set dns name="{interface}" dhcp')
-        print(f"DNS settings removed successfully for {interface}.")
+        print(GREEN + f"DNS settings removed successfully for {interface}." + RESET)
     except Exception as e:
-        print(f"Failed to remove DNS for {interface}: {e}")
+        print(RED+ f"Failed to remove DNS for {interface}: {e}" + RESET)
 
 if __name__ == "__main__":
     connected_interfaces = get_connected_interfaces()
@@ -31,4 +34,4 @@ if __name__ == "__main__":
         for interface in connected_interfaces:
             remove_dns(interface)  
     else:
-        print("No active network interfaces found.")
+        print(RED + "No active network interfaces found." +RESET)

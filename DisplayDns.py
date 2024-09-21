@@ -1,12 +1,18 @@
 import os
 
+
+RED = "\033[31m"
+GREEN = "\033[32m"
+RESET = "\033[0m"
+
+
 def get_active_dns():
     output = os.popen('ipconfig /all').readlines()
 
     current_interface = None
     dns_servers = {}  
 
-    print("Current DNS settings for active network interfaces:\n")
+    print(GREEN + "Current DNS settings for active network interfaces:" + RESET)
 
     for i, line in enumerate(output):
         line = line.strip()
@@ -26,9 +32,9 @@ def get_active_dns():
 
     if dns_servers:
         for interface, dns in dns_servers.items():
-            print(f"{interface}: {', '.join(dns)}")
+            print(GREEN + f"{interface}: {', '.join(dns)}" + RESET)
     else:
-        print("No active DNS settings found.")
+        print(RED + "No active DNS settings found." + RESET)
 
 if __name__ == "__main__":
     get_active_dns()

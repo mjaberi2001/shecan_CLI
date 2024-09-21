@@ -1,4 +1,7 @@
 import os
+RED = "\033[31m"
+GREEN = "\033[32m"
+RESET = "\033[0m"
 
 def show_menu():
     print("Select an option:")
@@ -24,7 +27,7 @@ def main():
             print('Exiting ...')
             break
         else:
-            print("Invalid choise. Please try again")
+            print(RED + "Invalid choise. Please try again" + RESET)
 
 if __name__ == "__main__":
     main();

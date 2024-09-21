@@ -1,5 +1,7 @@
 import os
-
+RED = "\033[31m"
+GREEN = "\033[32m"
+RESET = "\033[0m"
 
 def get_active_interface():
     output = os.popen('ipconfig').readlines()
@@ -25,9 +27,9 @@ def set_dns(interface,dns1,dns2):
     try:
         os.system(f'netsh interface ip set dns name="{interface}" static {dns1}')
         os.system(f'netsh interface ip add dns name="{interface}" {dns2} index=2')
-        print(f"DNS settings updated successfully for {interface}.")
+        print(GREEN + f"DNS settings updated successfully for {interface}." + RESET)
     except Exception as e:
-        print(f"Failed to set DNS: {e}")
+        print(RED + f"Failed to set DNS: {e}"+ RESET)
 
 
 
@@ -39,4 +41,4 @@ if __name__ == "__main__":
         for intf in interface:
             set_dns(intf,primary_dns,secondary_dns)
     else:
-        print("No active netwrk interface found")
+        print(RED + "No active netwrk interface found" + RESET)
