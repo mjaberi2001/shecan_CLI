@@ -36,8 +36,8 @@ def set_dns(interface,dns1,dns2):
 if __name__ == "__main__":
     interface = get_active_interface()
     if interface:
-        primary_dns = "8.8.8.8"
-        secondary_dns = "8.8.4.4"
+        primary_dns = "178.22.122.100"
+        secondary_dns = "185.51.200.2"
         for intf in interface:
             set_dns(intf,primary_dns,secondary_dns)
     else:
