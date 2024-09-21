@@ -20,7 +20,6 @@ def main():
             os.system('python DeactiveShecan.py')
         elif choice == "3":
             os.system('python DisplayDns.py')
-            break
         elif choice == "4":
             print('Exiting ...')
             break
