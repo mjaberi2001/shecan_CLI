@@ -12,14 +12,14 @@ def show_menu():
 def main():
     while True:
         show_menu()
-        choice = input("Enter your Choice (1/2/3):")
+        choice = input("Enter your Choice (1/2/3/4):")
 
         if choice == "1":
             os.system('python ActiveShecan.py')
         elif choice =="2":
             os.system('python DeactiveShecan.py')
         elif choice == "3":
-            os.system('python display_dns.py')
+            os.system('python DisplayDns.py')
             break
         elif choice == "4":
             print('Exiting ...')
