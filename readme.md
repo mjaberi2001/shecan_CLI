@@ -10,10 +10,8 @@ First, download and install the latest version of Python.
 
 Then, run your Windows CMD as an administrator and enter the following command in it.
 
-Say what the step will be
-
     pip install psutil
 
-Next, you need to run your editor as an administrator and open the project folder in it.
+Next, you need to run your editor as an administrator and open the project folder in it. And run the following command.
 
     python ./main.py
