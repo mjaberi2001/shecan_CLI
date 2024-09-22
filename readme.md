@@ -4,10 +4,6 @@ What this program does is that you can set DNS Shkan or remove it and revert to 
 
 ## Getting Started
 
-These instructions will give you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on deploying the project on a live system.
-
 ### Installing
 
 First, download and install the latest version of Python.
